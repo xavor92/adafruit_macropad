@@ -13,6 +13,7 @@ from apps.nav import NavApp
 from apps.numpad import NumpadApp
 from apps.switcher import AppSwitcherApp
 from apps.window import WindowManagementApp
+from apps.deej import DeejApp
 from utils.app_pad import AppPad
 from utils.apps.key import (
     Key,
@@ -113,6 +114,11 @@ class HomeApp(KeyApp):
         app_switcher_app = AppSwitcherApp(app_pad, settings)
         cls.key_6 = Key(
             text="Apps", color=COLOR_APPS, command=SwitchAppCommand(app_switcher_app)
+        )
+
+        deej_app = DeejApp(app_pad, settings)
+        cls.key_7 = Key(
+            text="Deej", color=COLOR_APPS, command=SwitchAppCommand(deej_app)
         )
 
         window_manager_app = WindowManagementApp(app_pad, settings)
