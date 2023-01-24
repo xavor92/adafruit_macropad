@@ -11,6 +11,7 @@ except ImportError:
 from apps.func import FuncKeysApp
 from apps.nav import NavApp
 from apps.numpad import NumpadApp
+from apps.counterstrike import CSApp
 from apps.switcher import AppSwitcherApp
 from apps.window import WindowManagementApp
 from apps.deej import DeejApp
@@ -106,9 +107,9 @@ class HomeApp(KeyApp):
         nav_app = NavApp(app_pad, settings)
         cls.key_4 = Key(text="Nav", color=COLOR_NAV, command=SwitchAppCommand(nav_app))
 
-        func_keys_app = FuncKeysApp(app_pad, settings)
+        cs_app = CSApp(app_pad, settings)
         cls.key_5 = Key(
-            text="Func", color=COLOR_FUNC, command=SwitchAppCommand(func_keys_app)
+            text="CS", color=COLOR_NUMPAD, command=SwitchAppCommand(cs_app)
         )
 
         app_switcher_app = AppSwitcherApp(app_pad, settings)
